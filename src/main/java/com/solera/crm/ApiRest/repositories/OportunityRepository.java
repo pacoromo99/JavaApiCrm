@@ -8,6 +8,5 @@ import com.solera.crm.ApiRest.entities.Oportunity;
 @Repository
 public interface OportunityRepository extends JpaRepository<Oportunity, Integer>   
 {
-
 	Oportunity findByEmail(String email);
 }

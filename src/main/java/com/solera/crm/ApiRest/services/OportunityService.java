@@ -13,18 +13,22 @@ public class OportunityService {
 	@Autowired
 	private OportunityRepository oportunityRepository;
 
-	public void addOportunity(Oportunity oportunity) {
-		// TODO Auto-generated method stub
+	public void addOportunity(Oportunity oportunity) 
+	{
+		if(findByEmail(oportunity.getEmail())==null) 
+		{
+			oportunityRepository.save(oportunity);
+		}
 		
 	}
 
-	public List<Oportunity> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Oportunity> findAll() 
+	{
+		return oportunityRepository.findAll();
 	}
 
 	public Oportunity findByEmail(String email) {
-		return null;
+		return oportunityRepository.findByEmail(email);
 		// TODO Auto-generated method stub
 		
 	}
