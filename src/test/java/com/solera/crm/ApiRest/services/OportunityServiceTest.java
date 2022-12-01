@@ -3,6 +3,7 @@ package com.solera.crm.ApiRest.services;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -19,14 +20,13 @@ class OportunityServiceTest {
 	@Test
 	void testAddOportunity() 
 	{
-		LocalDate date = LocalDate.now();
+		Date date = new Date();
 		Oportunity oportunity = new Oportunity();
 		oportunity.setName("solera");
-		oportunity.setEmail("solera@solera.com");
+		oportunity.setEmail("pepe@solera.com");
 		oportunity.setCreationDate(date);
 		oportunity.setIsClient(true);
 		oportunity.setDescription("aasdadad");
-		
 		Oportunity oportunityResult = service.findByEmail(oportunity.getEmail());
 		assertEquals(null, oportunityResult);
 		List<Oportunity> listado = service.findAll();

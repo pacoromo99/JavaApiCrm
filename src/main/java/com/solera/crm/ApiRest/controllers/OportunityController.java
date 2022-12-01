@@ -1,11 +1,15 @@
 package com.solera.crm.ApiRest.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.solera.crm.ApiRest.entities.Oportunity;
 import com.solera.crm.ApiRest.services.OportunityService;
 
@@ -19,6 +23,15 @@ public class OportunityController {
 	@RequestMapping(path="/opportunity/new", method = RequestMethod.POST)
 	public void addOportunity(@RequestBody Oportunity opportunity)
 	{
+		System.out.println(opportunity.toString());
+		oportunityService.addOportunity(opportunity);
+		
+	}
+	
+	@GetMapping(path="/opportunity")
+	public List<Oportunity> getAllOportunity()
+	{
+		return oportunityService.findAll();
 		
 	}
 

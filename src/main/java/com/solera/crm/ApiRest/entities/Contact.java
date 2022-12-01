@@ -1,6 +1,6 @@
 package com.solera.crm.ApiRest.entities;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +17,7 @@ public class Contact
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String type;
-	private LocalDate date;
+	private Date date;
 	private String description;	
 	
 	@ManyToOne
@@ -26,10 +26,17 @@ public class Contact
 	
 	public Contact() {}
 
-	public Contact(Integer id, String type, LocalDate date, String description,
+	public Contact(Integer id, String type, Date date, String description,
 			Oportunity oportunity) {
 		super();
 		this.id = id;
+		this.type = type;
+		this.date = date;
+		this.description = description;
+		this.oportunity = oportunity;
+	}
+
+	public Contact(String type, Date date, String description, Oportunity oportunity) {
 		this.type = type;
 		this.date = date;
 		this.description = description;
@@ -52,11 +59,11 @@ public class Contact
 		this.type = type;
 	}
 
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

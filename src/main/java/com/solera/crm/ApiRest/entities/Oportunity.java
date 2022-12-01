@@ -1,6 +1,6 @@
 package com.solera.crm.ApiRest.entities;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,13 +15,13 @@ public class Oportunity
 	private Integer id;
 	private String name;
 	private String email;
-	private LocalDate creationDate;
+	private Date creationDate;
 	private Boolean isClient;
 	private String description;
 	
 	public Oportunity() {}
 
-	public Oportunity(Integer id, String name, String email, LocalDate creationDate, Boolean isClient, String description) {
+	public Oportunity(Integer id, String name, String email, Date creationDate, Boolean isClient, String description) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -55,11 +55,11 @@ public class Oportunity
 		this.email = email;
 	}
 
-	public LocalDate getCreationDate() {
+	public Date getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(LocalDate creationDate) {
+	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
 
