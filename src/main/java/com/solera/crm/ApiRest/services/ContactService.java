@@ -15,12 +15,15 @@ public class ContactService {
 	
 	public void addContact(Contact contact) 
 	{
-		
+		if(contact !=null) 
+		{
+			contactRepository.save(contact);
+		}
 	}
 
 	public List<Contact> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return contactRepository.findAll();
 	}
 
 }

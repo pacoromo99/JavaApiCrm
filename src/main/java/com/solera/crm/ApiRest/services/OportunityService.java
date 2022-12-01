@@ -1,6 +1,7 @@
 package com.solera.crm.ApiRest.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,11 @@ public class OportunityService {
 		return oportunityRepository.findByEmail(email);
 		// TODO Auto-generated method stub
 		
+	}
+
+	public Optional<Oportunity> findById(Integer id) {
+		// TODO Auto-generated method stub
+		return oportunityRepository.findById(id);
 	}
 
 }
