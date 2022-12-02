@@ -58,9 +58,11 @@ public class OportunityService {
 		return oportunityRepository.findById(id);
 	}
 
-	public void addClient(Oportunity oportunity) {
-		// TODO Auto-generated method stub
-		
+	public void addClient(int id) {
+	
+		Oportunity op = oportunityRepository.findById(id).get();
+		op.setIsClient(true);
+		oportunityRepository.flush();
 	}
 
 }

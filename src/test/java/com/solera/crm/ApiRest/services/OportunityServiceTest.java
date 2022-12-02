@@ -45,9 +45,7 @@ class OportunityServiceTest {
 		oportunity.setDescription("aasdadad");
 		List<Oportunity> listado = service.findByClientsTrue();
 		int tamaño = listado.size();
-		service.addClient(oportunity);
+		service.addClient(oportunity.getId());
 		assertEquals(tamaño + 1,  service.findByClientsTrue().size());
 	}
-
-
 }
