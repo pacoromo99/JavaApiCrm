@@ -40,5 +40,18 @@ public class OportunityController {
 	{
 		return oportunityService.findById(id);
 	}
-
+	
+	@GetMapping(path="/opportunityIsNotClient")
+	public List<Oportunity> getAllOportunityIsNotClient()
+	{
+		return oportunityService.findByClientsFalse();
+		
+	}
+	
+	@GetMapping(path="/opportunityIsClient")
+	public List<Oportunity> getAllOportunityIsClient()
+	{
+		return oportunityService.findByClientsTrue();
+		
+	}
 }

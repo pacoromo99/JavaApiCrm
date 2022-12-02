@@ -33,7 +33,6 @@ public class ContactController {
 	public List<Contact> getAllContact()
 	{
 		return contactService.findAll();
-		
 	}
 	
 	

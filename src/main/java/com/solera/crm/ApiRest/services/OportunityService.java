@@ -33,8 +33,19 @@ public class OportunityService {
 
 	public List<Oportunity> findAll() 
 	{
+		
 		return oportunityRepository.findAll();
 	}
+	public List<Oportunity> findByClientsFalse() 
+	{
+		return oportunityRepository.findByClientsFalse();
+	}
+	
+	public List<Oportunity> findByClientsTrue() 
+	{
+		return oportunityRepository.findByClientsTrue();
+	}
+	
 
 	public Oportunity findByEmail(String email) {
 		return oportunityRepository.findByEmail(email);
@@ -45,6 +56,11 @@ public class OportunityService {
 	public Optional<Oportunity> findById(Integer id) {
 		// TODO Auto-generated method stub
 		return oportunityRepository.findById(id);
+	}
+
+	public void addClient(Oportunity oportunity) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

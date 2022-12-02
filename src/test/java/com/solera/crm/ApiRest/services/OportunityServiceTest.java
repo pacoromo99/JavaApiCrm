@@ -33,6 +33,21 @@ class OportunityServiceTest {
 		service.addOportunity(oportunity);
 		assertEquals(tamaño + 1,  service.findAll().size());
 	}
+	
+	void testAddClient() 
+	{
+		Date date = new Date();
+		Oportunity oportunity = new Oportunity();
+		oportunity.setName("solera");
+		oportunity.setEmail("pepe@solera.com");
+		oportunity.setCreationDate(date);
+		oportunity.setIsClient(false);
+		oportunity.setDescription("aasdadad");
+		List<Oportunity> listado = service.findByClientsTrue();
+		int tamaño = listado.size();
+		service.addClient(oportunity);
+		assertEquals(tamaño + 1,  service.findByClientsTrue().size());
+	}
 
 
 }
